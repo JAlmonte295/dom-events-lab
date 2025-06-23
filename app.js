@@ -67,52 +67,39 @@ calculator.addEventListener('click', (event) => {
 
 /*-------------------------------- Functions --------------------------------*/
 
-// //create a function which calculates the total based on the display value
-// function calculateTotal() {
-//   // Get the current display value
-//   const displayValue = displayElement[0].innerText;
+//create a function which calculates the total based on the display value
+function calculateTotal() {
+  // Get the current display value
+  const displayValue = displayElement[0].innerText;
   
-//   // Split the display value into numbers and operators
-//   const numbers = displayValue.split(/[\+\-\*\/]/).map(Number);
-//   const operators = displayValue.split(/[0-9]+/).filter(op => op !== '');
+  // Split the display value into numbers and operators
+  const numbers = displayValue.split(/[\+\-\*\/]/).map(Number);
+  const operator = displayValue.split(/[0-9]+/).filter(op => op !== '');
 
-//   // Initialize total with the first number
-//   let total = numbers[0];
+  // Initialize total with the first number
+  let total = 0;
+  let number1 = numbers[0];
+  let number2 = numbers[1];
 
-//   // Loop through the operators and numbers to calculate the total
-//   for (let i = 0; i < operators.length; i++) {
-//     switch (operators[i]) {
-//       case '+':
-//         total += numbers[i + 1];
-//         break;
-//       case '-':
-//         total -= numbers[i + 1];
-//         break;
-//       case '*':
-//         total *= numbers[i + 1];
-//         break;
-//       case '/':
-//         total /= numbers[i + 1];
-//         break;
-//     }
-//   }
+if (operator == '+') {
+    total = number1 + number2;
+}
+else if (operator == '-') {
+    total = number1 - number2;
+}
+else if (operator == '*') {
+    total = number1 * number2;
+}
+else if (operator == '/') {
+    total = number1 / number2;
+}
+else {
+    total = number1;
+};
 
-//   // Display the total in the first display element
-//   displayElement[0].innerText = total;
-// };
+  // Display the total in the first display element
+  displayElement[0].innerText = total;
+};
 
-// simplify the function above
-// function calculateTotal() {
-//   const displayValue = displayElement[0].innerText;
-//   const numbers = displayValue.split(/[\+\-\*\/]/).map(Number);
-//   const operators = displayValue.split(/[0-9]+/).filter(op => op !== '');
 
-//   let total = numbers[0];
-
-//   for (let i = 0; i < operators.length; i++) {
-//     total = eval(`${total} ${operators[i]} ${numbers[i + 1]}`);
-//   }
-
-//   displayElement[0].innerText = total;
-// };
 
