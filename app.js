@@ -4,7 +4,6 @@
 
 /*-------------------------------- Variables --------------------------------*/
 
-// make calculator always show "0" on the display
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -61,6 +60,7 @@ function calculateTotal() {
   const displayValue = displayElement[0].innerText;
   const numbers = displayValue.split(/[\+\-\*\/]/).map(Number);
   const operator = displayValue.split(/[0-9]+/).filter(oprt => oprt !== '');
+  //had to use to help from google AI to help me figure out how get the value out of the display, interesting solution which worked great but I had to understand what it did in order to finish the function. 
 
   let total = 0;
   let number1 = numbers[0];
